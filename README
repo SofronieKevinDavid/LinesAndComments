@@ -20,4 +20,4 @@ Total lines of code: 14
 
 
 
-***For running the source code, without the jar, you may have to add the org.apache.commons.io.jar to the project first***
+***For running the source code(not the jar) you may have to add the org.apache.commons.io.jar to the project first***
