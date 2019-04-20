@@ -9,12 +9,9 @@ import java.util.ArrayList;
 
 public class Main {
     public static final String special="\\"+'"';
-    public static void main(String[] args) throws IOException {
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter the path:");
-        String s = br.readLine();
-        firstMethod(s);
+    public static void main(String[] args) {
+        String one=args[0];
+        firstMethod(one);
     }
     public static void firstMethod(String path){
         String[] arrayy=new String[1];
@@ -42,6 +39,7 @@ public class Main {
                 while ((line = bufferreader.readLine()) != null) {
                     arrayList.add(line);
                 }
+                bufferreader.close();
 
             } catch (FileNotFoundException ex) {
                 ex.printStackTrace();
