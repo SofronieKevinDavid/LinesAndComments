@@ -2,9 +2,9 @@ This project is a jar file that can find all the .java files from a path(includi
 The project can be run by downloading the .jar file and running it from the command line as a tool.
 
 Example of cmd input/output:
-C:\Users\D>java -jar C:\Users\D\IdeaProjects\LinesAndComments\out\artifacts\LinesAndComments_jar\LinesAndComments.jar
+C:\Users\D>java -jar C:\Users\D\IdeaProjects\LinesAndComments\out\artifacts\LinesAndComments_jar\LinesAndComments.jar <-- .jar file path
 Enter the path:
-C:\Users\D\Desktop                          <--this is your path (input)
+C:\Users\D\Desktop                                                                                            <--this is your path (input)
 Main.java:
 Total lines of comments: 5
 Total lines of code: 101
