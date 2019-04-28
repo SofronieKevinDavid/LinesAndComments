@@ -8,7 +8,7 @@ import java.util.Iterator;
 
 public class LinesAndCommentsInJavaFile {
 
-    public static final String specialQuoteInQuote ="\\"+'"';
+    private static final String specialQuoteInQuote ="\\"+'"';
 
     public static void linesAndCommentsInJavaFile(String path){
         int numberOfLines=0;
@@ -101,7 +101,7 @@ public class LinesAndCommentsInJavaFile {
         }
     }
 
-    public static ArrayList<String> getQuotesInQuotesOut(ArrayList<String> array){
+    private static ArrayList<String> getQuotesInQuotesOut(ArrayList<String> array){
 
         ArrayList<String> codeWithoutQuotesInQuotes=new ArrayList<>();
 
@@ -116,7 +116,7 @@ public class LinesAndCommentsInJavaFile {
         return codeWithoutQuotesInQuotes;
     }
 
-    public static ArrayList<String> getTextBetweenQuotationsOut(ArrayList<String> array){
+    private static ArrayList<String> getTextBetweenQuotationsOut(ArrayList<String> array){
 
         //for when there are quotation marks on the same line:
         for(int i=0;i<array.size();i++){

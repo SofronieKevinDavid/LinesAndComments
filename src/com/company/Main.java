@@ -10,7 +10,7 @@ public class Main {
         String argument=args[0];
 
         ArrayList<String> javaFiles=fromPathToJavaPaths(argument);
-        
+
         for(int i=0;i<javaFiles.size();i++){
             linesAndCommentsInJavaFile(javaFiles.get(i));
         }
