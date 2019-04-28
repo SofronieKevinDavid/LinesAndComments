@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 public class FromPathToJavaFiles {
-    public static ArrayList<String> fromPathToJavaPaths(String path){
+    public ArrayList<String> fromPathToJavaPaths(String path){
 
         String[] typeOfFiles=new String[1];
         typeOfFiles[0]="java";
@@ -19,7 +19,7 @@ public class FromPathToJavaFiles {
         for(File file:files){
             javaPaths.add(file.getAbsolutePath());
         }
-
+        System.out.println(javaPaths.get(0));
         return javaPaths;
     }
 }
