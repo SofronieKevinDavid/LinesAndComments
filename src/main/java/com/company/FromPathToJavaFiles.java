@@ -19,7 +19,6 @@ public class FromPathToJavaFiles {
         for(File file:files){
             javaPaths.add(file.getAbsolutePath());
         }
-        System.out.println(javaPaths.get(0));
         return javaPaths;
     }
 }
