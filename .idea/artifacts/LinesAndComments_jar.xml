@@ -3,7 +3,7 @@
     <output-path>$PROJECT_DIR$/out/artifacts/LinesAndComments_jar</output-path>
     <root id="archive" name="LinesAndComments.jar">
       <element id="module-output" name="LinesAndComments" />
-      <element id="extracted-dir" path="$USER_HOME$/Desktop/org.apache.commons.io.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/commons-io/commons-io/2.1/commons-io-2.1.jar" path-in-jar="/" />
     </root>
   </artifact>
 </component>

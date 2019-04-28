@@ -15,7 +15,7 @@ public class FromPathToJavaFiles {
 
         Collection<File> files= FileUtils.listFiles(directory,typeOfFiles,true);
 
-        ArrayList<String> javaPaths=new ArrayList<>();
+        ArrayList<String> javaPaths=new ArrayList<String>();
         for(File file:files){
             javaPaths.add(file.getAbsolutePath());
         }

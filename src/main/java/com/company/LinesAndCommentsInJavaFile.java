@@ -14,7 +14,7 @@ public class LinesAndCommentsInJavaFile {
         int numberOfLines=0;
         int numberOfComments=0;
         try{
-            ArrayList<String> javaFileLineToString=new ArrayList<>();
+            ArrayList<String> javaFileLineToString=new ArrayList<String>();
 
             try {
 
@@ -67,7 +67,7 @@ public class LinesAndCommentsInJavaFile {
                                 numberOfLines++;
                                 int plusNrOfComments = 1;
                                 boolean ifContains = false;
-                                while (ifContains == false) {
+                                while (!ifContains) {
                                     if (iterator.hasNext()) {
                                         plusNrOfComments++;
                                         String str = iterator.next();
@@ -103,7 +103,7 @@ public class LinesAndCommentsInJavaFile {
 
     private static ArrayList<String> getQuotesInQuotesOut(ArrayList<String> array){
 
-        ArrayList<String> codeWithoutQuotesInQuotes=new ArrayList<>();
+        ArrayList<String> codeWithoutQuotesInQuotes=new ArrayList<String>();
 
         for(int i=0;i<array.size();i++){
             if(array.get(i).contains(specialQuoteInQuote)) {
