@@ -1,25 +1,5 @@
 This project is a jar file that can find all the .java files from a path(including directory/subdirectories).
 The project can be run by downloading the .jar file and running it from the command line as a tool.
 
-Example of cmd input/output:
-C:\Users\D>java -jar "C:\Users\D\Desktop\LinesAndComments.jar" C:\Users\D\Desktop     <--the first path is the path of the jar, the second 
-New Text Document.java:                                                                   path is the path you give as an argument
-Total lines of comments: 0
-Total lines of code: 12
-/////////////////////////////////////////                            
-Main.java:
-Total lines of comments: 5
-Total lines of code: 101
-/////////////////////////////////////////
-problema.java:
-Total lines of comments: 6
-Total lines of code: 137
-/////////////////////////////////////////
-prob.java:
-Total lines of comments: 4
-Total lines of code: 14
-/////////////////////////////////////////
-
-
-
-***For running the source code(not the jar) you have to add the org.apache.commons.io.jar to the project first***
+Example of cmd input:
+C:\Users\D>java -jar "C:\Users\D\Desktop\LinesAndComments-1.0-SNAPSHOT-jar-with-dependencies.jar" C:\Users\D\Desktop
