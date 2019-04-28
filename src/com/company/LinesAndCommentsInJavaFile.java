@@ -6,11 +6,11 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class FromJavaPathToOutput {
+public class LinesAndCommentsInJavaFile {
 
     public static final String specialQuoteInQuote ="\\"+'"';
 
-    public static void fromJavaPathToOutput(String path){
+    public static void linesAndCommentsInJavaFile(String path){
         int numberOfLines=0;
         int numberOfComments=0;
         try{
@@ -102,7 +102,9 @@ public class FromJavaPathToOutput {
     }
 
     public static ArrayList<String> getQuotesInQuotesOut(ArrayList<String> array){
+
         ArrayList<String> codeWithoutQuotesInQuotes=new ArrayList<>();
+
         for(int i=0;i<array.size();i++){
             if(array.get(i).contains(specialQuoteInQuote)) {
                 codeWithoutQuotesInQuotes.add(array.get(i).replace(specialQuoteInQuote, ""));
