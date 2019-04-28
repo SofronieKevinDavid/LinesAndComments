@@ -100,18 +100,18 @@ public class FromJavaPathToOutput {
             System.out.println("Error");
         }
     }
-    //pana aici am schimbat numele sa fie explicite
+
     public static ArrayList<String> getQuotesInQuotesOut(ArrayList<String> array){
-        ArrayList<String> last=new ArrayList<>();
+        ArrayList<String> codeWithoutQuotesInQuotes=new ArrayList<>();
         for(int i=0;i<array.size();i++){
             if(array.get(i).contains(specialQuoteInQuote)) {
-                last.add(array.get(i).replace(specialQuoteInQuote, ""));
+                codeWithoutQuotesInQuotes.add(array.get(i).replace(specialQuoteInQuote, ""));
             }else{
-                last.add(array.get(i));
+                codeWithoutQuotesInQuotes.add(array.get(i));
             }
         }
 
-        return last;
+        return codeWithoutQuotesInQuotes;
     }
 
     public static ArrayList<String> getTextBetweenQuotationsOut(ArrayList<String> array){
@@ -119,36 +119,36 @@ public class FromJavaPathToOutput {
         //for when there are quotation marks on the same line:
         for(int i=0;i<array.size();i++){
 
-            String x=array.get(i).replaceAll("\\\".*?\\\"|\\'.*?\\'|`.*`", "");
-            array.set(i,x);
+            String withoutQuotes=array.get(i).replaceAll("\\\".*?\\\"|\\'.*?\\'|`.*`", "");
+            array.set(i,withoutQuotes);
         }
 
         //for when there are quotation marks on different lines:
         for(int i=0;i<array.size();i++){
-            boolean b=false;
+            boolean ifContains=false;
             if(array.get(i).contains("\"")){
-                b=true;
-                int x=array.get(i).indexOf("\"");
-                String string=array.get(i).substring(x,(array.get(i).length()-0));
-                array.set(i,array.get(i).replaceAll(string,""));
+                ifContains=true;
+                int index=array.get(i).indexOf("\"");
+                String toReplace=array.get(i).substring(index,(array.get(i).length()-0));
+                array.set(i,array.get(i).replaceAll(toReplace,""));
             }
-            if(b){
+            if(ifContains){
                 cod:
                 {
-                    int y=array.size()-1;
-                    while(y!=i){
-                        if (array.get(y).contains("\"")) {
-                            int z = array.get(y).indexOf("\"");
-                            String string2 = array.get(y).substring(0, (z + 1));
-                            array.set(y, array.get(y).replaceAll(string2, ""));
-                            int k=y-1;
-                            while(k!=i){
-                                array.set(k,"");
-                                k--;
+                    int size=array.size()-1;
+                    while(size!=i){
+                        if (array.get(size).contains("\"")) {
+                            int firstIndex = array.get(size).indexOf("\"");
+                            String toReplace = array.get(size).substring(0, (firstIndex + 1));
+                            array.set(size, array.get(size).replaceAll(toReplace, ""));
+                            int fullLineInQuotes=size-1;
+                            while(fullLineInQuotes!=i){
+                                array.set(fullLineInQuotes,"");
+                                fullLineInQuotes--;
                             }
                             break cod;
                         }
-                        y--;
+                        size--;
                     }
                 }
             }

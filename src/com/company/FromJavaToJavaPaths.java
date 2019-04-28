@@ -8,10 +8,10 @@ import java.util.Collection;
 
 public class FromJavaToJavaPaths {
     public static ArrayList<String> fromPathToJavaPaths(String path){
-        String[] arrayy=new String[1];
-        arrayy[0]="java";
+        String[] typeOfFiles=new String[1];
+        typeOfFiles[0]="java";
         File directory=new File(path);
-        Collection<File> files= FileUtils.listFiles(directory,arrayy,true);
+        Collection<File> files= FileUtils.listFiles(directory,typeOfFiles,true);
 
         ArrayList<String> javaPaths=new ArrayList<>();
         for(File file:files){
