@@ -5,14 +5,15 @@ import java.util.ArrayList;
 public class Main {
 
     public static void main(String[] args) {
-        String argument=args[0];
+        String path=args[0];
 
-        FromPathToJavaFiles toJava=new FromPathToJavaFiles();
-        ArrayList<String> javaFiles=toJava.fromPathToJavaPaths(argument);
+        ProjectScanner scanner=new ProjectScanner(path);
+        ArrayList<LinesAndComments> javaFiles=scanner.scan();
 
-        LinesAndCommentsInJavaFile counter=new LinesAndCommentsInJavaFile();
+
         for(int i=0;i<javaFiles.size();i++){
-            System.out.println(counter.linesAndCommentsInJavaFile(javaFiles.get(i)));
+            System.out.println("Lines Of Code:"+javaFiles.get(i).getLines());
+            System.out.println("Lines Of Comments:"+javaFiles.get(i).getComments());
         }
     }
 }

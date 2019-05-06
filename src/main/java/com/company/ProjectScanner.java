@@ -1,13 +1,19 @@
 package com.company;
 
 import org.apache.commons.io.FileUtils;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class FromPathToJavaFiles {
-    public ArrayList<String> fromPathToJavaPaths(String path){
+public class ProjectScanner extends LinesAndCommentsInJavaFile {
+    String path;
+
+    public ProjectScanner(String path) {
+        this.path=path;
+    }
+
+    public ArrayList<LinesAndComments> scan(){
+        ArrayList<LinesAndComments> linesAndComments =new ArrayList<LinesAndComments>();
 
         String[] typeOfFiles=new String[1];
         typeOfFiles[0]="java";
@@ -19,6 +25,9 @@ public class FromPathToJavaFiles {
         for(File file:files){
             javaPaths.add(file.getAbsolutePath());
         }
-        return javaPaths;
+        for(int i=0;i<javaPaths.size();i++){
+            linesAndComments.add(linesAndCommentsInJavaFile(javaPaths.get(i)));
+        }
+        return linesAndComments;
     }
 }

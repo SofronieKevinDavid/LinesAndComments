@@ -1,5 +1,6 @@
 package com.company;
 
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -9,9 +10,11 @@ import java.util.Iterator;
 public class LinesAndCommentsInJavaFile {
 
     private static final String specialQuoteInQuote ="\\"+'"';
+    private LinesAndComments linesAndComments;
 
-    public String linesAndCommentsInJavaFile(String path){
-        String output=null;
+
+    public LinesAndComments linesAndCommentsInJavaFile(String path){
+        linesAndComments=new LinesAndComments();
         int numberOfLines=0;
         int numberOfComments=0;
         try{
@@ -94,13 +97,12 @@ public class LinesAndCommentsInJavaFile {
                     }
                 }
             }
-            String comments=("Total lines of comments: " + numberOfComments);
-            String lines=("Total lines of code: " + numberOfLines);
-            output=comments+"\n"+lines;
+            linesAndComments.setLines(numberOfLines);
+            linesAndComments.setComments(numberOfComments);
         }catch (Exception e){
             System.out.println("Error");
         }
-        return output;
+        return linesAndComments;
     }
 
     private ArrayList<String> getQuotesInQuotesOut(ArrayList<String> array){
